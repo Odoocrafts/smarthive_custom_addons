@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- CRM Pipeline Stages -->
+        <record id="stage_new_enquiry" model="crm.stage">
+            <field name="name">New Enquiry</field>
+            <field name="sequence">1</field>
+            <field name="is_won">False</field>
+            <field name="fold">False</field>
+            <field name="requirements">Initial contact with the prospect or received from website/social media.</field>
+        </record>
+
+        <record id="stage_contacted" model="crm.stage">
+            <field name="name">Contacted</field>
+            <field name="sequence">2</field>
+            <field name="is_won">False</field>
+            <field name="fold">False</field>
+            <field name="requirements">Initial call completed, basic information about courses shared.</field>
+        </record>
+
+        <record id="stage_details_shared" model="crm.stage">
+            <field name="name">Details Shared</field>
+            <field name="sequence">3</field>
+            <field name="is_won">False</field>
+            <field name="fold">False</field>
+            <field name="requirements">Course brochure, fee structure, and admission process information shared.</field>
+        </record>
+
+        <record id="stage_followup" model="crm.stage">
+            <field name="name">Follow-up Scheduled</field>
+            <field name="sequence">4</field>
+            <field name="is_won">False</field>
+            <field name="fold">False</field>
+            <field name="requirements">Scheduled campus visit or online counseling session.</field>
+        </record>
+
+        <record id="stage_hot_lead" model="crm.stage">
+            <field name="name">Hot Lead</field>
+            <field name="sequence">5</field>
+            <field name="is_won">False</field>
+            <field name="fold">False</field>
+            <field name="requirements">Prospect has shown significant interest, application form shared/filled.</field>
+        </record>
+
+        <record id="stage_confirmed" model="crm.stage">
+            <field name="name">Confirmed Admission</field>
+            <field name="sequence">6</field>
+            <field name="is_won">True</field>
+            <field name="fold">False</field>
+            <field name="requirements">Student has paid fees and confirmed enrollment.</field>
+        </record>
+
+        <record id="stage_lost" model="crm.stage">
+            <field name="name">Lost</field>
+            <field name="sequence">7</field>
+            <field name="is_won">False</field>
+            <field name="fold">True</field>
+            <field name="requirements">Prospect has chosen another institution or not proceeding with admission.</field>
+        </record>
+        
+    </data>
+</odoo>

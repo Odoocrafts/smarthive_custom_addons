@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Update company information -->
+        <record id="base.main_company" model="res.company">
+            <field name="name">Noventis Institute of Technology</field>
+            <field name="street">Palazhi Tower, Near Cyberpark</field>
+            <field name="city">Kozhikode</field>
+            <field name="state_id" ref="base.state_in_kl"/>
+            <field name="zip">673016</field>
+            <field name="country_id" ref="base.in"/>
+            <field name="phone">+91 495 123 4567</field>
+            <field name="email">info@noventis.edu.in</field>
+            <field name="website">www.noventis.edu.in</field>
+            <field name="vat">32AABCN1234F1Z5</field>
+            <field name="currency_id" ref="base.INR"/>
+            <field name="company_registry">AABCN1234F</field>
+        </record>
+
+        <!-- Update company partner information -->
+        <record id="base.main_partner" model="res.partner">
+            <field name="name">Noventis Institute of Technology</field>
+            <field name="street">Palazhi Tower, Near Cyberpark</field>
+            <field name="city">Kozhikode</field>
+            <field name="state_id" ref="base.state_in_kl"/>
+            <field name="zip">673016</field>
+            <field name="country_id" ref="base.in"/>
+            <field name="phone">+91 495 123 4567</field>
+            <field name="email">info@noventis.edu.in</field>
+            <field name="website">www.noventis.edu.in</field>
+            <field name="vat">32AABCN1234F1Z5</field>
+        </record>
+
+    </data>
+</odoo>

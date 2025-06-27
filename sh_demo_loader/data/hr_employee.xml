@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Create HR Department for Admissions -->
+        <record id="department_admissions" model="hr.department">
+            <field name="name">Admissions</field>
+            <field name="complete_name">Admissions Department</field>
+        </record>
+        
+        <!-- Create Job Positions -->
+        <record id="job_senior_counselor" model="hr.job">
+            <field name="name">Senior Counselor</field>
+            <field name="department_id" ref="department_admissions"/>
+            <field name="description">Senior Student Admission Counselor</field>
+            <field name="no_of_recruitment">2</field>
+            <field name="state">recruit</field>
+        </record>
+
+        <record id="job_junior_counselor" model="hr.job">
+            <field name="name">Junior Counselor</field>
+            <field name="department_id" ref="department_admissions"/>
+            <field name="description">Junior Student Admission Counselor</field>
+            <field name="no_of_recruitment">3</field>
+            <field name="state">recruit</field>
+        </record>
+
+        <record id="job_crm_admin" model="hr.job">
+            <field name="name">CRM Admin</field>
+            <field name="department_id" ref="department_admissions"/>
+            <field name="description">Admissions CRM Administrator</field>
+            <field name="no_of_recruitment">1</field>
+            <field name="state">recruit</field>
+        </record>
+        
+        <!-- Create Employees -->
+        <record id="employee_afsal" model="hr.employee">
+            <field name="name">Afsal Rahman</field>
+            <field name="department_id" ref="department_admissions"/>
+            <field name="job_id" ref="job_senior_counselor"/>
+            <field name="work_email">afsal.rahman@noventis.edu.in</field>
+            <field name="work_phone">+91 8765432101</field>
+            <field name="country_id" ref="base.in"/>
+            <field name="gender">male</field>
+        </record>
+
+        <record id="employee_neha" model="hr.employee">
+            <field name="name">Neha Sharma</field>
+            <field name="department_id" ref="department_admissions"/>
+            <field name="job_id" ref="job_junior_counselor"/>
+            <field name="work_email">neha.sharma@noventis.edu.in</field>
+            <field name="work_phone">+91 8765432102</field>
+            <field name="country_id" ref="base.in"/>
+            <field name="gender">female</field>
+        </record>
+
+        <record id="employee_arjun" model="hr.employee">
+            <field name="name">Arjun Nair</field>
+            <field name="department_id" ref="department_admissions"/>
+            <field name="job_id" ref="job_crm_admin"/>
+            <field name="work_email">arjun.nair@noventis.edu.in</field>
+            <field name="work_phone">+91 8765432103</field>
+            <field name="country_id" ref="base.in"/>
+            <field name="gender">male</field>
+        </record>
+
+        <!-- Associate employees with Sales Teams -->
+        <record id="team_member_afsal" model="crm.team.member">
+            <field name="user_id" ref="base.user_admin"/> <!-- Placeholder: will be updated in script -->
+            <field name="crm_team_id" ref="sh_demo_loader.team_kozhikode"/>
+            <field name="assignment_enabled">True</field>
+            <field name="assignment_domain">[]</field>
+            <field name="assignment_max">15</field>
+        </record>
+
+        <record id="team_member_neha" model="crm.team.member">
+            <field name="user_id" ref="base.user_admin"/> <!-- Placeholder: will be updated in script -->
+            <field name="crm_team_id" ref="sh_demo_loader.team_ernakulam"/>
+            <field name="assignment_enabled">True</field>
+            <field name="assignment_domain">[]</field>
+            <field name="assignment_max">10</field>
+        </record>
+
+        <record id="team_member_arjun" model="crm.team.member">
+            <field name="user_id" ref="base.user_admin"/> <!-- Placeholder: will be updated in script -->
+            <field name="crm_team_id" ref="sh_demo_loader.team_kozhikode"/>
+            <field name="assignment_enabled">True</field>
+            <field name="assignment_domain">[]</field>
+            <field name="assignment_max">5</field>
+        </record>
+        
+    </data>
+</odoo>
