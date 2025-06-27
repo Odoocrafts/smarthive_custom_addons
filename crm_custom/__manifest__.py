@@ -3,6 +3,8 @@
     'version': '1.0',
     'category': 'Sales',
     'summary': 'Custom fields for CRM Lead',
+    # Explicitly set the technical name of the module
+    'technical_name': 'crm_custom',
     'depends': [
         'base',
         'crm',
@@ -19,4 +21,5 @@
     ],
     'installable': True,
     'application': False,
+    'post_init_hook': 'post_init_hook',
 }
