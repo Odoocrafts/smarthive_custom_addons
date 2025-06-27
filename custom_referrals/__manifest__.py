@@ -2,7 +2,7 @@
     'name': 'Referrals',
     'version': '17.0.1.0.0',
     'summary': 'This Apps for students Referrals',
-    'author': 'Tijus Academy',
+    'author': 'Odoocrafts',
     'depends': ['base', 'web', 'mail', 'crm','product'],
     'data': [
         'security/group.xml',

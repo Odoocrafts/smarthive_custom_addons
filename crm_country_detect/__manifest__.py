@@ -7,7 +7,7 @@
         This module enhances the CRM by automatically detecting a lead's country
         from the phone number and displaying the country flag in the kanban view.
     """,
-    'author': 'Tiju',
+    'author': 'Odoocrafts',
     'website': '',
     'depends': ['crm'],
     'data': [

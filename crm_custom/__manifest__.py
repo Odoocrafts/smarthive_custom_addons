@@ -1,5 +1,5 @@
 {
-    'name': 'Tijus CRM Custom',
+    'name': 'Odoocrafts CRM Custom',
     'version': '1.0',
     'category': 'Sales',
     'summary': 'Custom fields for CRM Lead',
