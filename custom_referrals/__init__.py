@@ -1,10 +1,8 @@
 from . import models
 
-def post_init_hook(cr, registry):
+def post_init_hook(env):
     """Create UTM source if it doesn't exist"""
-    from odoo import api, SUPERUSER_ID
-    
-    env = api.Environment(cr, SUPERUSER_ID, {})
+    # Note: In Odoo 17, the post_init_hook only receives the env parameter
     source_vals = [
         {'name': 'Online SBU Referral'},
         {'name': 'Organic Media Leads'}
