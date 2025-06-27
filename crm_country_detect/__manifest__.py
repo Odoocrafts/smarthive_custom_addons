@@ -11,7 +11,6 @@
     'website': '',
     'depends': ['crm'],
     'data': [
-        'security/ir.model.access.csv',
         'data/ir_cron.xml',
         'views/crm_lead_views.xml',
     ],
