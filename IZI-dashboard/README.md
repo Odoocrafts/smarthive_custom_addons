@@ -1,2 +1,0 @@
-# IZI-dashboard
- 
