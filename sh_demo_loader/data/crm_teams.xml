@@ -5,26 +5,10 @@
         <!-- Sales Teams -->
         <record id="team_kozhikode" model="crm.team">
             <field name="name">Kozhikode Admissions Team</field>
-            <field name="use_leads">True</field>
-            <field name="use_opportunities">True</field>
-            <field name="alias_name">kozhikode</field>
-            <field name="alias_domain">noventis.edu.in</field>
-            <field name="email_from">kozhikode@noventis.edu.in</field>
-            <field name="dashboard_graph_model">crm.lead</field>
-            <field name="dashboard_graph_period">month</field>
-            <field name="dashboard_graph_group">stage</field>
         </record>
 
         <record id="team_ernakulam" model="crm.team">
             <field name="name">Ernakulam Admissions Team</field>
-            <field name="use_leads">True</field>
-            <field name="use_opportunities">True</field>
-            <field name="alias_name">ernakulam</field>
-            <field name="alias_domain">noventis.edu.in</field>
-            <field name="email_from">ernakulam@noventis.edu.in</field>
-            <field name="dashboard_graph_model">crm.lead</field>
-            <field name="dashboard_graph_period">month</field>
-            <field name="dashboard_graph_group">stage</field>
         </record>
         
     </data>
