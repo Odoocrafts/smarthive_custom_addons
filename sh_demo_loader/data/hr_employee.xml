@@ -13,24 +13,18 @@
             <field name="name">Senior Counselor</field>
             <field name="department_id" ref="department_admissions"/>
             <field name="description">Senior Student Admission Counselor</field>
-            <field name="no_of_recruitment">2</field>
-            <field name="state">recruit</field>
         </record>
 
         <record id="job_junior_counselor" model="hr.job">
             <field name="name">Junior Counselor</field>
             <field name="department_id" ref="department_admissions"/>
             <field name="description">Junior Student Admission Counselor</field>
-            <field name="no_of_recruitment">3</field>
-            <field name="state">recruit</field>
         </record>
 
         <record id="job_crm_admin" model="hr.job">
             <field name="name">CRM Admin</field>
             <field name="department_id" ref="department_admissions"/>
             <field name="description">Admissions CRM Administrator</field>
-            <field name="no_of_recruitment">1</field>
-            <field name="state">recruit</field>
         </record>
         
         <!-- Create Employees -->
