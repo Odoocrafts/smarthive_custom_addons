@@ -10,10 +10,11 @@
     """,
     'author': 'SmartHive',
     'website': 'https://www.smarthive.io',
-    'depends': ['base', 'crm', 'hr', 'crm_country_detect'],
+    'depends': ['base', 'crm', 'hr', 'crm_country_detect', 'product', 'sale'],
     'data': [
         'security/ir.model.access.csv',
         'data/res_company.xml',
+        'data/product_courses.xml',
         'data/crm_stages.xml',
         'data/crm_teams.xml',
         'data/hr_employee.xml',

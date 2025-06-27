@@ -138,6 +138,33 @@ def randomize_lead_data(env):
                 ]
                 lead.message_post(body=random.choice(note_templates))
             
+            # Create a sale order for confirmed lead (Jacob - BCA Program)
+            if lead.id == env.ref('sh_demo_loader.lead_jacob').id and hasattr(lead, 'action_create_sale_order'):
+                try:
+                    # Add dummy bank and aadhaar details required for sale order creation
+                    lead.write({
+                        'aadhaar_no': '1234 5678 9012',
+                        'bank_account_name': 'Jacob Thomas',
+                        'bank_account_no': '1234567890123456',
+                        'bank_ifsc_code': 'SBIN0001234',
+                        'bank_name': 'State Bank of India',
+                        'relation_with_bank_acc_holder': 'self'
+                    })
+                    
+                    # Create and link a partner if needed
+                    if not lead.partner_id:
+                        partner = env['res.partner'].create({
+                            'name': lead.partner_name,
+                            'email': lead.email_from,
+                            'phone': lead.phone,
+                        })
+                        lead.partner_id = partner.id
+                        
+                    # Try to create sale order
+                    lead.action_create_sale_order()
+                except Exception as e:
+                    _logger.warning(f"Could not create sale order for demo lead: {e}")
+            
             # Trigger country detection from phone number if the module is installed
             if hasattr(env, 'ref') and env.ref('crm_country_detect.model_tiju_phone_country', False):
                 if hasattr(lead, '_compute_possible_country'):

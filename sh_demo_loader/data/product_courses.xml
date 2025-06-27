@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Course Categories -->
+        <record id="category_undergraduate" model="product.category">
+            <field name="name">Undergraduate Programs</field>
+        </record>
+        
+        <record id="category_postgraduate" model="product.category">
+            <field name="name">Postgraduate Programs</field>
+        </record>
+        
+        <record id="category_diploma" model="product.category">
+            <field name="name">Diploma Programs</field>
+        </record>
+        
+        <record id="category_certificate" model="product.category">
+            <field name="name">Certificate Courses</field>
+        </record>
+        
+        <!-- Undergraduate Courses -->
+        <record id="course_btech_cs" model="product.product">
+            <field name="name">B.Tech Computer Science</field>
+            <field name="categ_id" ref="sh_demo_loader.category_undergraduate"/>
+            <field name="type">service</field>
+            <field name="list_price">240000</field>
+            <field name="standard_price">180000</field>
+            <field name="default_code">BTH-CS</field>
+            <field name="description">A 4-year undergraduate program in Computer Science and Engineering with specialization options in AI, ML, Data Science and Cybersecurity.</field>
+        </record>
+        
+        <record id="course_bcom_finance" model="product.product">
+            <field name="name">B.Com Finance</field>
+            <field name="categ_id" ref="sh_demo_loader.category_undergraduate"/>
+            <field name="type">service</field>
+            <field name="list_price">120000</field>
+            <field name="standard_price">90000</field>
+            <field name="default_code">BCM-FIN</field>
+            <field name="description">A 3-year undergraduate program in Commerce with specialization in Financial Management, Banking and Insurance.</field>
+        </record>
+        
+        <record id="course_bca" model="product.product">
+            <field name="name">BCA Program</field>
+            <field name="categ_id" ref="sh_demo_loader.category_undergraduate"/>
+            <field name="type">service</field>
+            <field name="list_price">180000</field>
+            <field name="standard_price">135000</field>
+            <field name="default_code">BCA</field>
+            <field name="description">A 3-year undergraduate program in Computer Applications focusing on programming, web development, and system design.</field>
+        </record>
+        
+        <record id="course_bsc_psychology" model="product.product">
+            <field name="name">BSc Psychology</field>
+            <field name="categ_id" ref="sh_demo_loader.category_undergraduate"/>
+            <field name="type">service</field>
+            <field name="list_price">150000</field>
+            <field name="standard_price">112500</field>
+            <field name="default_code">BSC-PSY</field>
+            <field name="description">A 3-year undergraduate program in Psychology with emphasis on clinical, counseling, and research methodologies.</field>
+        </record>
+        
+        <!-- Postgraduate Courses -->
+        <record id="course_mba_general" model="product.product">
+            <field name="name">MBA General</field>
+            <field name="categ_id" ref="sh_demo_loader.category_postgraduate"/>
+            <field name="type">service</field>
+            <field name="list_price">350000</field>
+            <field name="standard_price">262500</field>
+            <field name="default_code">MBA-GEN</field>
+            <field name="description">A 2-year postgraduate program in Business Administration covering Marketing, Finance, HR and Operations.</field>
+        </record>
+        
+        <record id="course_mba_finance" model="product.product">
+            <field name="name">MBA Finance</field>
+            <field name="categ_id" ref="sh_demo_loader.category_postgraduate"/>
+            <field name="type">service</field>
+            <field name="list_price">380000</field>
+            <field name="standard_price">285000</field>
+            <field name="default_code">MBA-FIN</field>
+            <field name="description">A 2-year specialized MBA program focusing on Financial Management, Investment Analysis, and Banking.</field>
+        </record>
+        
+        <record id="course_msc_data_science" model="product.product">
+            <field name="name">MSc Data Science</field>
+            <field name="categ_id" ref="sh_demo_loader.category_postgraduate"/>
+            <field name="type">service</field>
+            <field name="list_price">320000</field>
+            <field name="standard_price">240000</field>
+            <field name="default_code">MSC-DS</field>
+            <field name="description">A 2-year postgraduate program in Data Science covering advanced statistics, machine learning, and data visualization.</field>
+        </record>
+        
+        <!-- Diploma Courses -->
+        <record id="course_digital_marketing" model="product.product">
+            <field name="name">Digital Marketing Diploma</field>
+            <field name="categ_id" ref="sh_demo_loader.category_diploma"/>
+            <field name="type">service</field>
+            <field name="list_price">75000</field>
+            <field name="standard_price">56250</field>
+            <field name="default_code">DIP-DM</field>
+            <field name="description">A 1-year diploma program covering SEO, SEM, Social Media Marketing, and Content Strategy.</field>
+        </record>
+        
+        <record id="course_hotel_management" model="product.product">
+            <field name="name">Hotel Management Diploma</field>
+            <field name="categ_id" ref="sh_demo_loader.category_diploma"/>
+            <field name="type">service</field>
+            <field name="list_price">95000</field>
+            <field name="standard_price">71250</field>
+            <field name="default_code">DIP-HM</field>
+            <field name="description">A 1-year diploma program in Hospitality Management with internship opportunities in partner hotels.</field>
+        </record>
+        
+        <!-- Certificate Courses -->
+        <record id="course_graphic_design" model="product.product">
+            <field name="name">Graphic Design Certificate</field>
+            <field name="categ_id" ref="sh_demo_loader.category_certificate"/>
+            <field name="type">service</field>
+            <field name="list_price">45000</field>
+            <field name="standard_price">33750</field>
+            <field name="default_code">CERT-GD</field>
+            <field name="description">A 6-month certificate program covering Adobe Creative Suite, design principles, and portfolio development.</field>
+        </record>
+        
+    </data>
+</odoo>
