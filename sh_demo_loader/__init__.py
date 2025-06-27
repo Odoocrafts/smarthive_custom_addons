@@ -10,21 +10,20 @@ _logger = logging.getLogger(__name__)
 
 def post_init_hook(cr, registry):
     """Run after module installation"""
-    with api.Environment.manage():
-        env = api.Environment(cr, SUPERUSER_ID, {})
-        
-        _logger.info("Running post-init hook for SmartHive Demo Loader...")
-        
-        # Create users for employees if they don't exist
-        create_employee_users(env)
-        
-        # Update team members with correct users
-        update_team_members(env)
-        
-        # Randomize some lead dates and trigger country detection
-        randomize_lead_data(env)
-        
-        _logger.info("SmartHive Demo Loader post-init hook completed.")
+    env = api.Environment(cr, SUPERUSER_ID, {})
+    
+    _logger.info("Running post-init hook for SmartHive Demo Loader...")
+    
+    # Create users for employees if they don't exist
+    create_employee_users(env)
+    
+    # Update team members with correct users
+    update_team_members(env)
+    
+    # Randomize some lead dates and trigger country detection
+    randomize_lead_data(env)
+    
+    _logger.info("SmartHive Demo Loader post-init hook completed.")
 
 
 def create_employee_users(env):
