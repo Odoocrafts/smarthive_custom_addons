@@ -1,0 +1,63 @@
+<odoo>
+    <record id="view_crm_lead_form_inherited" model="ir.ui.view">
+        <field name="name">crm.lead.form</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr='//page[@name="extra"]' position='after'>
+                <page name="categorization" string="TikTok Info">
+                    <group name="tiktok_info" string="TikTok Info">
+                        <field name="tiktok_lead_id"/>
+                        <field name="tiktok_date_create"/>
+                        <field name="tiktok_page_id"/>
+                        <field name="tiktok_ad_id"/>
+                        <field name="tiktok_campaign_id"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_crm_tiktok_page_form" model="ir.ui.view">
+        <field name="name">crm.tiktok.page.form</field>
+        <field name="model">crm.tiktok.page</field>
+        <field name="arch" type="xml">
+            <form string="TikTok Page">
+                <button name="import_lead_form" type="object" string="Import Lead"/>
+                <group colspan="2">
+                    <field name="tiktok_account"/>
+                    <field name="tiktok_page_id"/>
+                    <field name="tik_advertiser_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_crm_tiktok_page_tree" model="ir.ui.view">
+        <field name="name">crm.tiktok.page.list</field>
+        <field name="model">crm.tiktok.page</field>
+        <field name="arch" type="xml">
+            <tree string="Tiktok Page">
+                <field name="tiktok_account"/>
+                <field name="write_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_crm_tiktok_page" model="ir.actions.act_window">
+        <field name="name">Tiktok Pages</field>
+        <field name="res_model">crm.tiktok.page</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_crm_tiktok_page_tree"/>
+        <field name="help" type="html">
+            <p></p>
+        </field>
+    </record>
+
+    <menuitem
+            id="menu_crm_tiktok_page"
+            name="Tiktok Pages"
+            parent="crm.menu_crm_config_lead"
+            sequence="90"
+            action="action_crm_tiktok_page"
+            groups="sales_team.group_sale_manager"/>
+</odoo>

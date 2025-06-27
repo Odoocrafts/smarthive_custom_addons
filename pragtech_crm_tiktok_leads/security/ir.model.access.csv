@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_socail_tiktok,socail.tiktok,model_tiktok_socail_dashboard,,1,1,1,1
+access_pragtech_social_tiktok,pragtech.social.tiktok,model_tiktok_pragtech_social_media,,1,1,1,1
+access_tiktok_pragtech_social_account,tiktok.pragtech.social.account,model_tiktok_pragtech_social_account,,1,1,1,1
+access_tiktok_social_page,tiktok.social.page,model_tiktok_social_page,,1,1,1,1
+access_crm_tiktok_page,crm.tiktok.page,model_crm_tiktok_page,,1,1,1,1
+access_utm_tiktok_adset,utm.tiktok.adset,model_utm_tiktok_adset,,1,1,1,1

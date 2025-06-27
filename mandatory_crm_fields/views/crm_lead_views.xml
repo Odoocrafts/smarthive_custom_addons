@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="crm_lead_view_form_inherit_product_required" model="ir.ui.view">
+        <field name="name">crm.lead.view.form.inherit.product.required</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Use a more reliable XPath that finds the first page in the notebook -->
+            <xpath expr="//notebook//page[1]" position="inside">
+                <group>
+                    <field name="course_id" required="context.get('enforce_course_required', False)"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

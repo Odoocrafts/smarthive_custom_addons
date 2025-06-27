@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_crm_stage_required_field_tree" model="ir.ui.view">
+        <field name="name">crm.stage.required.field.tree</field>
+        <field name="model">crm.stage.required.field</field>
+        <field name="arch" type="xml">
+            <tree string="Required Fields">
+                <field name="stage_id"/>
+                <field name="field_id"/>
+                <field name="field_description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_crm_stage_required_field_form" model="ir.ui.view">
+        <field name="name">crm.stage.required.field.form</field>
+        <field name="model">crm.stage.required.field</field>
+        <field name="arch" type="xml">
+            <form string="Required Field">
+                <sheet>
+                    <group>
+                        <field name="stage_id"/>
+                        <field name="field_id"/>
+                        <field name="field_description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="action_crm_stage_required_field" model="ir.actions.act_window">
+        <field name="name">Required Fields by Stage</field>
+        <field name="res_model">crm.stage.required.field</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Define required fields for CRM stages
+            </p>
+            <p>
+                For each field added here, the field will be required when a lead or opportunity is in the corresponding stage.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_crm_stage_required_field"
+              name="Required Fields by Stage"
+              parent="crm.crm_menu_config"
+              action="action_crm_stage_required_field"
+              sequence="15"/>
+</odoo>

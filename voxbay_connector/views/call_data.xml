@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="voxbay_outgoing_cdr_tree_view" model="ir.ui.view">
+        <field name="name">voxbay.call.data.record.outgoing.tree</field>
+        <field name="model">voxbay.call.data.record</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="call_uuid" string="UUID" optional="hide"/>
+                <field name="called_number" string="Customer Number"/>
+                <field name="caller_number" string="Operator Number"/>
+                <field name="operator_employee_id" readonly="1"/>
+                <field name="agent_number"/>
+                <field name="call_date"/>
+                <field name="total_call_duration" readonly="1"/>
+                <field name="conversation_duration" readonly="1"/>
+                <field name="call_status"/>
+                <field name="recording_url" widget="audio_player"/>
+                <field name="call_start_time"/>
+                <field name="call_end_time"/>
+                <field name="dtmf" optional="hide"/>
+                <field name="transferred_number" optional="hide"/>
+                <field name="event_status"/>
+                <field name="call_type"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="voxbay_incoming_cdr_tree_view" model="ir.ui.view">
+        <field name="name">voxbay.call.data.record.incoming.tree</field>
+        <field name="model">voxbay.call.data.record</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="call_uuid" string="UUID" optional="hide"/>
+                <field name="caller_number" string="Customer Number" />
+                <field name="called_number" string="Operator Number"/>
+                <field name="operator_employee_id" readonly="1"/>
+                <field name="agent_number"/>
+                <field name="call_date"/>
+                <field name="total_call_duration"/>
+                <field name="conversation_duration"/>
+                <field name="call_status"/>
+                <field name="recording_url" widget="audio_player"/>
+                <field name="call_start_time"/>
+                <field name="call_end_time"/>
+                <field name="dtmf" optional="hide"/>
+                <field name="transferred_number" optional="hide"/>
+                <field name="event_status"/>
+                <field name="call_type"/>
+
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="voxbay_incoming_cdr_search_view" model="ir.ui.view">
+        <field name="name">voxbay.call.data.record.search</field>
+        <field name="model">voxbay.call.data.record</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="lead_id"/>
+                <field name="called_number" string="Called Number"/>
+                <field name="caller_number" string="Caller Number"/>
+                <field name="agent_number"/>
+                <field name="transferred_number"/>
+                <field name="dtmf"/>
+                <field name="recording_url"/>
+                <!-- Filter by call type -->
+                <filter string="Incoming Calls" name="call_type_incoming" domain="[('call_type', '=', 'incoming')]"/>
+                <filter string="Outgoing Calls" name="call_type_outgoing" domain="[('call_type', '=', 'outgoing')]"/>
+                <separator/>
+                <!-- Filters for specific call statuses -->
+                <filter string="Connected" name="connected_filter" domain="[('call_status', '=', 'Connected')]"/>
+                <filter string="Not Connected" name="not_connected_filter" domain="[('call_status', '=', 'Not Connected')]"/>
+                <filter string="Cancel" name="cancel_filter" domain="[('call_status', '=', 'Cancel')]"/>
+                <filter string="No Answer" name="no_answer_filter" domain="[('call_status', '=', 'NOANSWER')]"/>
+                <filter string="Busy" name="busy_filter" domain="[('call_status', '=', 'BUSY')]"/>
+                <filter string="Congestion" name="congestion_filter" domain="[('call_status', '=', 'CONGESTION')]"/>
+                <filter string="Channel Unavailable" name="chanunavail_filter" domain="[('call_status', '=', 'CHANUNAVAIL')]"/>
+                <filter string="Failed" name="failed_filter" domain="[('call_status', '=', 'FAILED')]"/>
+
+                <!-- Group by call status -->
+                <group expand="1" string="Group By">
+                    <filter string="Lead" name="group_by_lead" context="{'group_by': 'lead_id'}"/>
+                    <filter string="Call Status" name="group_by_call_status" context="{'group_by': 'call_status'}"/>
+                    <filter string="Call Date" name="group_by_call_date" context="{'group_by': 'call_date'}"/>
+                </group>
+
+            </search>
+        </field>
+    </record>
+
+    <!--  Voxbay Incoming CDR -->
+    <record id="voxbay_incoming_cdr_action" model="ir.actions.act_window">
+        <field name="name">Voxbay Incoming Calls</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">voxbay.call.data.record</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('call_type','=','incoming')]</field>
+        <field name="context">{'default_call_type': 'incoming'}</field>
+        <field name="view_id" ref="voxbay_connector.voxbay_incoming_cdr_tree_view"/>
+
+    </record>
+
+    <!--  Voxbay Incoming CDR -->
+    <record id="voxbay_outgoing_cdr_action" model="ir.actions.act_window">
+        <field name="name">Voxbay Outgoing Calls</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">voxbay.call.data.record</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('call_type','=','outgoing')]</field>
+        <field name="context">{'default_call_type': 'outgoing'}</field>
+        <field name="view_id" ref="voxbay_connector.voxbay_outgoing_cdr_tree_view"/>
+    </record>
+
+
+    <!-- REPORTING -->
+    <menuitem
+        id="voxbay_incoming_cdr_menu"
+        name="Voxbay Incoming Calls"
+        parent="crm.crm_menu_report"
+        sequence="20"
+        action="voxbay_incoming_cdr_action"
+        />
+
+    <!-- REPORTING -->
+    <menuitem
+        id="voxbay_outgoing_cdr_menu"
+        name="Voxbay Outgoing Calls"
+        parent="crm.crm_menu_report"
+        sequence="20"
+        action="voxbay_outgoing_cdr_action"
+        />
+</odoo>

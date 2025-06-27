@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_tiktok_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.tiktok</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <div id="tiktok_information">
+                    <h2>TikTok Account Configuration</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="tiktok_own_account"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="tiktok_own_account" class="oe_inline o_form_label"/>
+                                <div class="text-muted">
+                                    Use TikTok Developer Account
+                                </div>
+                                <div class="content-group" invisible="tiktok_own_account == False">
+                                    <div class="mt16">
+                                        <label for="tiktok_app_id" string="App ID" class="col-3 col-lg-3 o_form_label"/>
+                                        <field name="tiktok_app_id" class="oe_inline"/>
+                                    </div>
+                                    <div class="mt16">
+                                        <label for="tiktok_client_secret" string="App Secret"
+                                               class="col-3 col-lg-3 o_form_label"/>
+                                        <field name="tiktok_client_secret" password="True" class="oe_inline"/>
+                                    </div>
+                                    <div class="mt16">
+                                        <label for="rid" string="R ID" class="col-3 col-lg-3 o_form_label"/>
+                                        <field name="rid" class="oe_inline"/>
+                                    </div>
+                                    <div class="mt16">
+                                        <label for="start_time" string="Start Time" class="col-3 col-lg-3 o_form_label"/>
+                                        <field name="start_time" class="oe_inline"/>
+                                    </div>
+                                     <div class="mt16">
+                                        <label for="end_time" string="End Time" class="col-3 col-lg-3 o_form_label"/>
+                                        <field name="end_time" class="oe_inline"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

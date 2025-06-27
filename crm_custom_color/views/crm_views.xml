@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Form view for CRM Stage to add color picker -->
+    <record id="view_crm_stage_form" model="ir.ui.view">
+        <field name="name">crm.stage.form</field>
+        <field name="model">crm.stage</field>
+        <field name="inherit_id" ref="crm.crm_stage_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='fold']" position="after">
+                <field name="color" widget="color"/>
+                <field name="color_select"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_crm_lead_kanban_color" model="ir.ui.view">
+        <field name="name">crm.lead.kanban.color</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='probability']" position="after">
+                <field name="stage_color"/>
+            </xpath>
+            <xpath expr="//t[@t-name='kanban-box']//div[1]" position="attributes">
+                <attribute name="t-attf-style">
+                    #{'background-color:'} #{record.stage_color ? record.stage_color.value: 'white'} !important;
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_crm_lead_form_color" model="ir.ui.view">
+        <field name="name">crm.lead.form.color</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='stage_id']" position="before">
+                <field name="stage_color" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='stage_id']" position="replace">
+                <field name="stage_id" widget="statusbar_duration_colored" options="{'clickable': '1', 'fold_field': 'fold'}" domain="['|', ('team_id', '=', team_id), ('team_id', '=', False)]" invisible="not active or type == 'lead'"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Modify CRM Lead Form View -->
+    <record id="crm_lead_view_form_inherit_country_detect" model="ir.ui.view">
+        <field name="name">crm.lead.view.form.inherit.country.detect</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='phone']" position="after">
+                <field name="possible_country" readonly="1"/>
+            </xpath>
+            <!-- Add hidden field for kanban view -->
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="country_flag" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Modify CRM Lead Kanban View -->
+    <record id="crm_case_kanban_view_leads_inherit_country_detect" model="ir.ui.view">
+        <field name="name">crm.lead.kanban.inherit.country.detect</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="country_flag" invisible="1"/>
+                <div t-if="record.country_flag.raw_value" style="display: inline-block; margin-left: 4px;">
+                    <span t-esc="record.country_flag.raw_value"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Modify CRM Opportunity Kanban View -->
+    <record id="crm_case_kanban_view_oppor_inherit_country_detect" model="ir.ui.view">
+        <field name="name">crm.lead.oppor.kanban.inherit.country.detect</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_lead_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="country_flag" invisible="1"/>
+                <div t-if="record.country_flag.raw_value" style="display: inline-block; margin-left: 4px;">
+                    <span t-esc="record.country_flag.raw_value"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

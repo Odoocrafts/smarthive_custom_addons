@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="referral_groups" model="ir.module.category">
+        <field name="name">referrals</field>
+        <field name="sequence">301</field>
+        <field name="visible" eval="0"/>
+    </record>
+    <record id="admin_referral" model="res.groups">
+        <field name="name">admin</field>
+        <field name="category_id" ref="referral_groups"/>
+    </record>
+    <record id="media_referral" model="res.groups">
+        <field name="name">media</field>
+        <field name="category_id" ref="referral_groups"/>
+    </record>
+</odoo>

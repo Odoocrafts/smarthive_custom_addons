@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="tiktok_social_dashboard_data_record" model="tiktok.socail.dashboard">
+        <field name="name">TiokTok Dashboard</field>
+    </record>
+     <record id="tiktok_pragtech_social_media" model="tiktok.pragtech.social.media">
+            <field name="tiktok_media_name">TikTok</field>
+            <field name="tiktok_media_type">tiktok</field>
+            <field name="tiktok_media_description">Manage TikTok Pages and Forms</field>
+            <field name="tiktok_media_image" type="base64" file="pragtech_crm_tiktok_leads/static/src/img/tiktok_Logo.png"/>
+     </record>
+    <record model="utm.medium" id="utm_medium_tiktok">
+            <field name="name">TikTok</field>
+        </record>
+
+         <record id="utm_source_tiktok" model="utm.source">
+            <field name="name">TikTok</field>
+        </record>
+</odoo>
