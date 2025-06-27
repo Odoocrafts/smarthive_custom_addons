@@ -12,8 +12,6 @@
             <field name="team_id" ref="sh_demo_loader.team_kozhikode"/>
             <field name="stage_id" ref="sh_demo_loader.stage_contacted"/>
             <field name="type">lead</field>
-            <field name="medium_id" ref="utm.utm_medium_email"/>
-            <field name="source_id" ref="utm.utm_source_search_engine"/>
             <field name="course_id" ref="sh_demo_loader.course_mba_general"/>
             <field name="expected_revenue">350000</field>
             <field name="description">Inquired about MBA program. Has 3 years of work experience in IT sector. Looking for evening/weekend classes. Budget around 4-5 lakhs.</field>
@@ -28,8 +26,6 @@
             <field name="team_id" ref="sh_demo_loader.team_ernakulam"/>
             <field name="stage_id" ref="sh_demo_loader.stage_details_shared"/>
             <field name="type">lead</field>
-            <field name="medium_id" ref="utm.utm_medium_website"/>
-            <field name="source_id" ref="utm.utm_source_search_engine"/>
             <field name="course_id" ref="sh_demo_loader.course_btech_cs"/>
             <field name="expected_revenue">240000</field>
             <field name="description">Looking for B.Tech Computer Science program. Scored 95% in 12th. Interested in scholarship opportunities. Father is a government employee.</field>
@@ -44,8 +40,6 @@
             <field name="team_id" ref="sh_demo_loader.team_kozhikode"/>
             <field name="stage_id" ref="sh_demo_loader.stage_followup"/>
             <field name="type">lead</field>
-            <field name="medium_id" ref="utm.utm_medium_social"/>
-            <field name="source_id" ref="utm.utm_source_facebook"/>
             <field name="course_id" ref="sh_demo_loader.course_digital_marketing"/>
             <field name="expected_revenue">75000</field>
             <field name="description">Working professional interested in Digital Marketing diploma. Has scheduled a campus visit this weekend. Currently working at retail company as sales executive.</field>
@@ -60,8 +54,6 @@
             <field name="team_id" ref="sh_demo_loader.team_ernakulam"/>
             <field name="stage_id" ref="sh_demo_loader.stage_hot_lead"/>
             <field name="type">lead</field>
-            <field name="medium_id" ref="utm.utm_medium_social"/>
-            <field name="source_id" ref="utm.utm_source_instagram"/>
             <field name="course_id" ref="sh_demo_loader.course_bcom_finance"/>
             <field name="expected_revenue">120000</field>
             <field name="description">Very interested in B.Com Finance program. Has already visited campus twice. Parents are also supportive. Looking to apply for hostel accommodation.</field>
@@ -76,8 +68,6 @@
             <field name="team_id" ref="sh_demo_loader.team_kozhikode"/>
             <field name="stage_id" ref="sh_demo_loader.stage_confirmed"/>
             <field name="type">lead</field>
-            <field name="medium_id" ref="utm.utm_medium_phone"/>
-            <field name="source_id" ref="utm.utm_source_newsletter"/>
             <field name="course_id" ref="sh_demo_loader.course_bca"/>
             <field name="expected_revenue">180000</field>
             <field name="description">Has confirmed admission for BCA program. First installment of fees paid. Will be joining in the upcoming batch. Interested in Android development electives.</field>
@@ -93,8 +83,6 @@
             <field name="team_id" ref="sh_demo_loader.team_ernakulam"/>
             <field name="stage_id" ref="sh_demo_loader.stage_lost"/>
             <field name="type">lead</field>
-            <field name="medium_id" ref="utm.utm_medium_website"/>
-            <field name="source_id" ref="utm.utm_source_search_engine"/>
             <field name="course_id" ref="sh_demo_loader.course_hotel_management"/>
             <field name="expected_revenue">95000</field>
             <field name="description">Was interested in Hotel Management program but decided to join a college in Mumbai as they offered better internship opportunities with 5-star hotels.</field>
@@ -111,8 +99,6 @@
             <field name="team_id" ref="sh_demo_loader.team_kozhikode"/>
             <field name="stage_id" ref="sh_demo_loader.stage_new_enquiry"/>
             <field name="type">lead</field>
-            <field name="medium_id" ref="utm.utm_medium_email"/>
-            <field name="source_id" ref="utm.utm_source_website"/>
             <field name="course_id" ref="sh_demo_loader.course_msc_data_science"/>
             <field name="expected_revenue">320000</field>
             <field name="description">Fresh inquiry about MSc Data Science program. Has a B.Sc in Statistics. Looking for placement opportunities in the field.</field>
@@ -127,8 +113,6 @@
             <field name="team_id" ref="sh_demo_loader.team_ernakulam"/>
             <field name="stage_id" ref="sh_demo_loader.stage_details_shared"/>
             <field name="type">lead</field>
-            <field name="medium_id" ref="utm.utm_medium_social"/>
-            <field name="source_id" ref="utm.utm_source_linkedin"/>
             <field name="course_id" ref="sh_demo_loader.course_mba_finance"/>
             <field name="expected_revenue">380000</field>
             <field name="description">Interested in MBA Finance. Currently working at a bank. Looking for weekend program options. Has already received course brochure and fee structure.</field>
@@ -143,8 +127,6 @@
             <field name="team_id" ref="sh_demo_loader.team_kozhikode"/>
             <field name="stage_id" ref="sh_demo_loader.stage_contacted"/>
             <field name="type">lead</field>
-            <field name="medium_id" ref="utm.utm_medium_website"/>
-            <field name="source_id" ref="utm.utm_source_search_engine"/>
             <field name="course_id" ref="sh_demo_loader.course_bsc_psychology"/>
             <field name="expected_revenue">150000</field>
             <field name="description">Interested in BSc Psychology program. Has been contacted once and provided basic information. Mentioned interest in research-oriented curriculum.</field>
@@ -159,8 +141,6 @@
             <field name="team_id" ref="sh_demo_loader.team_ernakulam"/>
             <field name="stage_id" ref="sh_demo_loader.stage_hot_lead"/>
             <field name="type">lead</field>
-            <field name="medium_id" ref="utm.utm_medium_social"/>
-            <field name="source_id" ref="utm.utm_source_instagram"/>
             <field name="course_id" ref="sh_demo_loader.course_graphic_design"/>
             <field name="expected_revenue">45000</field>
             <field name="description">Very interested in Graphic Design diploma. Already has some freelance experience. Application form submitted, waiting for portfolio review.</field>
