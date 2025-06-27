@@ -8,9 +8,9 @@ from odoo import api, SUPERUSER_ID
 
 _logger = logging.getLogger(__name__)
 
-def post_init_hook(cr, registry):
+def post_init_hook(env):
     """Run after module installation"""
-    env = api.Environment(cr, SUPERUSER_ID, {})
+    # Note: In Odoo 17, the post_init_hook only receives the env parameter
     
     _logger.info("Running post-init hook for SmartHive Demo Loader...")
     
