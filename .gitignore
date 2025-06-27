@@ -80,6 +80,8 @@ venv.bak/
 *.xls
 *.xlsx
 !data/*.csv
+!security/*.csv
+!*/security/*.csv
 
 # Temporary files
 .~lock.*
